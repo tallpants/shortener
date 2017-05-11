@@ -2,5 +2,9 @@ const urlBox = $('#url-input');
 const submitButton = $('#submit');
 
 submitButton.on('click', () => {
-  console.log($('#url-input').val());
+  let requestBody = { 'url': urlBox.val() };
+  $.post('https://shrter.herokuapp.com/api/shorten', requestBody, (data) => {
+    console.log(typeof data);
+    console.log(data);
+  }, 'json');
 });
