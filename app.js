@@ -6,9 +6,15 @@ const api = require('./routes/api');
 const app = express();
 
 app.use(morgan('tiny'));
+
 app.use(express.static('./public'));
+
 app.use('/api/', api);
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
+app.get('/index', (req, res) => {
+    res.send('Hello!');
+});
+
+app.listen(8080, () => {
+  console.log('Listening on port 8080');
 });
