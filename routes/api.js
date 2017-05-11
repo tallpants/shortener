@@ -2,7 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 const validUrl = require('valid-url');
 
-const { db } = require('../app');
+const db = require('../app').db;
 
 const router = express.Router();
 
