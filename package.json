@@ -20,6 +20,7 @@
   "homepage": "https://github.com/tallpants/shortener#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "morgan": "^1.8.1",
     "semantic-ui": "^2.2.10"
   }
 }
