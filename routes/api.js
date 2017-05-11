@@ -1,8 +1,9 @@
 const express = require('express');
+const redis = require('redis');
 const crypto = require('crypto');
 const validUrl = require('valid-url');
 
-const db = require('../app').db;
+const db = redis.createClient(process.env.REDIS_URL);
 
 const router = express.Router();
 
