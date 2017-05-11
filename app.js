@@ -1,11 +1,20 @@
 const express = require('express');
-const morgan = require('morgan');
+const redis = require('redis');
+const logging = require('morgan');
 
 const api = require('./routes/api');
+const secrets = require('./secrets');
+
 
 const app = express();
+const db = redis.createClient(secrets.redisPort, secrets.redisHost);
+db.auth(secrets.redisPassword);
 
-app.use(morgan('tiny'));
+db.on('error', (err) => {
+    console.error(err);
+});
+
+app.use(logging('tiny'));
 
 app.use(express.static('./public'));
 
