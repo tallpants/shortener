@@ -1,0 +1,8 @@
+{
+  "name": "shortener",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tallpants/shortener",
+  "author": "adithya <adithyakreddy6@gmail.com>",
+  "license": "MIT"
+}
