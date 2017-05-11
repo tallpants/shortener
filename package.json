@@ -22,6 +22,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
-    "redis": "^2.7.1"
+    "redis": "^2.7.1",
+    "valid-url": "^1.0.9"
   }
 }
