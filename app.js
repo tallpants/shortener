@@ -2,7 +2,6 @@ const express = require('express');
 const redis = require('redis');
 const logging = require('morgan');
 
-const api = require('./routes/api');
 const secrets = require('./secrets');
 
 const db = redis.createClient(secrets.redisPort, secrets.redisHost);
@@ -13,6 +12,8 @@ db.on('error', (err) => {
 });
 
 const app = express();
+
+app.get('/api/)
 
 app.use(logging('tiny'));
 app.use(express.static('./public'));
