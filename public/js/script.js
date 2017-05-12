@@ -9,28 +9,21 @@ submitButton.on('click', () => {
     url: 'https://shrter.herokuapp.com/api/shorten',
     data: JSON.stringify({ url: urlBox.val() }),
     contentType: 'application/json; charset=utf-8',
-    success: (data) => {
-      if (!successBox.attr('hidden')) {
-        successBox.attr('hidden', true);
-      }
-
-      let url = 'https://shrtner.herokuapp.com/' + key;
-      successBox.text('<strong>Success:</strong> <a href="' + url + '">' + url + '</a>');
-      successBox.removeAttr('hidden');
-    },
-    error: () => { } 
+    success: ajaxSuccess,
+    error: ajaxError
   });
 });
 
-// submitButton.on('click', () => {
-//   if (successBox.attr('hidden')) {
-//     successBox.removeAttr('hidden');
-//   } else {
-//     successBox.attr('hidden', true);
-//   }
-// });
-
-
 function ajaxSuccess(data) {
+  successBox.attr('hidden', true);
+  errorBox.attr('hidden', true);
 
+  let url = 'https://shrtner.herokuapp.com/' + data.key;
+  successBox.html('<strong>Success: </strong> <a href="' + url + '"> ' + url + ' </a>');
+  successBox.removeAttr('hidden');
+}
+
+function ajaxError(data) {
+  errorBox.removeAttr('hidden');
+  errorBox.html('<strong>Error: </strong> ' + data.error);
 }
