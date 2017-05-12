@@ -2,6 +2,10 @@
   margin-top: 5em;
 }
 
+#submit {
+  margin-top: 1em;
+}
+
 .success, .error {
   margin-top: 2em;
 }
