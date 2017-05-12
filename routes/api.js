@@ -16,7 +16,7 @@ router.post('/shorten', (req, res) => {
     let key = buffer.toString('hex');
     db.set(key, req.body.url);
     db.expire(key, 172800); // Key expires after 48 hours
-    return res.json({ 'key': key });
+    return res.json({ 'key' : key });
   });
 });
 
