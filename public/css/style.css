@@ -1,3 +1,7 @@
 .text-field-and-button {
   margin-top: 5em;
 }
+
+.success, .error {
+  margin-top: 2em;
+}

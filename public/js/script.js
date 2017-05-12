@@ -2,9 +2,17 @@ const urlBox = $('#url-input');
 const submitButton = $('#submit');
 
 submitButton.on('click', () => {
-  let requestBody = { 'url': urlBox.val() };
-  $.post('https://shrter.herokuapp.com/api/shorten', requestBody, (data) => {
-    console.log(typeof data);
-    console.log(data);
-  }, 'json');
+  $.ajax({
+    type: 'POST',
+    url: 'https://shrter.herokuapp.com/api/shorten',
+    data: JSON.stringify({ url: urlBox.val() }),
+    contentType: 'application/json; charset=utf-8',
+    success: () => { },
+    error: () => { } 
+  });
 });
+
+
+function ajaxSuccess(data) {
+  
+}
