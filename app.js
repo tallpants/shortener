@@ -9,8 +9,8 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', webRoutes);
 app.use('/api', apiRoutes);
-app.use(webRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log('Listening on port' + process.env.PORT);
