@@ -1,7 +1,7 @@
 const urlBox = $('#url-input');
 const submitButton = $('#submit');
 const successBox = $('#success-alert-box');
-const failureBox = $('#failure-alert-box');
+const errorBox = $('#failure-alert-box');
 
 submitButton.on('click', () => {
   $.ajax({
