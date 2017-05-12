@@ -2,8 +2,10 @@
   margin-top: 5em;
 }
 
-#submit {
-  margin-top: 1em;
+@media screen and (max-width: 768px) {
+  #submit {
+    margin-top: 1em;
+  }
 }
 
 .success, .error {
