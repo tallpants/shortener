@@ -24,6 +24,7 @@ function ajaxSuccess(data) {
 }
 
 function ajaxError(data) {
-  errorBox.removeAttr('hidden');
+  successBox.attr('hidden', true);
   errorBox.html('<strong>Error: </strong> ' + data.error);
+  errorBox.removeAttr('hidden');
 }
