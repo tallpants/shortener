@@ -18,7 +18,7 @@ function ajaxSuccess(data) {
   successBox.attr('hidden', true);
   errorBox.attr('hidden', true);
 
-  let url = 'https://shrtner.herokuapp.com/' + data.key;
+  let url = 'https://shrter.herokuapp.com/' + data.key;
   successBox.html('<strong>Success: </strong> <a href="' + url + '"> ' + url + ' </a>');
   successBox.removeAttr('hidden');
 }
