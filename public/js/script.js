@@ -25,6 +25,6 @@ function ajaxSuccess(data) {
 
 function ajaxError(data) {
   successBox.attr('hidden', true);
-  errorBox.html('<strong>Error: </strong> ' + data.error);
+  errorBox.html('<strong>Error: </strong> Expected a URL');
   errorBox.removeAttr('hidden');
 }
