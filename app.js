@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/:key', (req, res) => {
+app.get('/:key/', (req, res) => {
     db.get(req.params.key, (err, reply) => {
         if (!reply) {
             return res.status(404).redirect('/404.html');
